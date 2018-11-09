@@ -1,13 +1,13 @@
 html {
-    height: 100%
+  height: 100%
 }
 
 body {
-    text-align: center;
-    background: rgb(250, 255, 240);
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
+  text-align: center;
+  background: rgb(250, 255, 240);
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 header {
@@ -15,27 +15,29 @@ header {
 }
 
 .text-effect {
-    font-family: 'Monoton', sans-serif;
-    text-shadow: 1px 1px #c0c0c0;
-    color: teal;
-    font-weight: 800;
-    text-align: center;
-    display: block;
-    animation: effect 1s ease-in-out;
+  font-family: 'Monoton', sans-serif;
+  text-shadow: 1px 1px #c0c0c0;
+  color: teal;
+  font-weight: 800;
+  text-align: center;
+  display: block;
+  animation: effect 1s ease-in-out;
 }
+
 @keyframes effect {
-    from{
-        color: #fffaf0;
-        text-shadow: 0 0 0.5rem #fffaf0, 0 0 1rem #fffaf0, 0 0 1.8rem #fffaf0,
-            0 0 2rem #c0c0c0, 0 0 3rem #c0c0c0, 0 0 4rem #c0c0c0,
-            0 0 4.5rem #c0c0c0, 0 0 5rem #c0c0c0;
-    }
-    to{
-        color: teal;
-        text-shadow: 0 0 0.4rem #fffaf0, 0 0 0.7rem #fffaf0, 0 0 1rem #fffaf0,
-            0 0 1.5rem #c0c0c0, 0 0 2rem #c0c0c0, 0 0 2.5rem #c0c0c0,
-            0 0 3rem #c0c0c0, 0 0 4rem #c0c0c0;
-    }
+  from {
+    color: #fffaf0;
+    text-shadow: 0 0 0.5rem #fffaf0, 0 0 1rem #fffaf0, 0 0 1.8rem #fffaf0,
+      0 0 2rem #c0c0c0, 0 0 3rem #c0c0c0, 0 0 4rem #c0c0c0,
+      0 0 4.5rem #c0c0c0, 0 0 5rem #c0c0c0;
+  }
+
+  to {
+    color: teal;
+    text-shadow: 0 0 0.4rem #fffaf0, 0 0 0.7rem #fffaf0, 0 0 1rem #fffaf0,
+      0 0 1.5rem #c0c0c0, 0 0 2rem #c0c0c0, 0 0 2.5rem #c0c0c0,
+      0 0 3rem #c0c0c0, 0 0 4rem #c0c0c0;
+  }
 }
 
 .form-section {
@@ -48,16 +50,19 @@ header {
   align-items: center;
 }
 
-.input-width .input-height { width: 1rem; }
+.input-width .input-height {
+  width: 1rem;
+}
 
 input[type="number"] {
-   width: 3rem;
+  width: 2rem;
+  /* height: 1rem; */
 }
 
 label {
   font-family: 'Comic sans', sans-serif;
   color: teal;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   font-weight: bold;
 }
 
@@ -66,30 +71,28 @@ label {
 }
 
 .grid-btn {
-  width: 65px;
+  width: 60px;
   align-self: center;
   border-radius: 5%;
   box-shadow: 1px 1px 3px #c0c0c0;
 }
 
 h2, h3 {
-    margin: 0.5rem;
-    font-size: 1rem;
-    font-family: 'Monoton', sans-serif;
-    color: teal;
-    text-shadow: 0.5px 0.5px #c0c0c0;
+  margin: 0.5rem;
+  font-size: 1rem;
+  font-family: 'Monoton', sans-serif;
+  color: teal;
+  text-shadow: 0.5px 0.5px #c0c0c0;
 }
 
 h3 {
-  font-size: 0.8em;
+  font-size: 0.6em;
   font-family: 'Comic sans', sans-serif;
 }
-
 
 .grid-section {
   display: block;
 }
-
 
 .grid {
   box-shadow: 1px 1px 3px #c0c0c0;
@@ -104,12 +107,10 @@ td {
   background-color: rgb(250, 255, 240);
 }
 
-
 table {
-    border-collapse: collapse;
-    margin: 0 auto;
+  border-collapse: collapse;
+  margin: 0 auto;
 }
-
 
 .footer {
   position: fixed;
@@ -122,26 +123,27 @@ table {
   opacity: 0.7;
   color: #FFF;
   padding: 0.5rem;
-
 }
-
 
 /*/////////////////////////////
 //        BREAKPOINTS        //
 /////////////////////////////*/
+@media only screen and (min-width: 1200px) {
+  .text-effect {
+    font-size: 3rem;
+  }
 
-
-@media only screen and (min-width: 1200px){
-    .text-effect{ font-size: 3rem; }
-    .grid {
-      width: 40%;
-      height: 40vw;
-    }
-
+  .grid {
+    width: 40%;
+    height: 40vw;
+  }
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1199px){
-  .text-effect{ font-size: 2.5rem; }
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .text-effect {
+    font-size: 2.5rem;
+  }
+
   .grid {
     width: 55%;
     height: 55vw;
@@ -149,31 +151,46 @@ table {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .text-effect{ font-size: 2rem; }
-    .grid {
-      width: 70%;
-      height: 70vw;
-    }
+  .text-effect {
+    font-size: 2rem;
+  }
 
+  .grid {
+    width: 70%;
+    height: 70vw;
+  }
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-    .text-effect{ font-size: 1.5rem; }
-    h2 {font-size: 1rem}
-    .grid {
-      width: 70%;
-      height: 70vw;
-    }
-    /* .footer {padding: 0.7rem} */
+  .text-effect {
+    font-size: 1rem;
+  }
+
+  h2, h3 {
+    font-size: 0.6rem;
+  }
+
+  .grid {
+    width: 40%;
+    height: 40vw;
+  }
 }
 
+@media only screen and (max-width: 479px) {
+  .text-effect {
+    font-size: 1rem;
+  }
 
-@media only screen and (max-width: 479px){
-    .text-effect{ font-size: 1rem; }
-    h2 {font-size: 0.6rem}
-    .grid {
-      width: 85%;
-      height: 85vw;
-    }
-    .footer {height: 0.6rem}
+  h2 {
+    font-size: 0.6rem
+  }
+
+  .grid {
+    width: 85%;
+    height: 85vw;
+  }
+
+  .footer {
+    height: 0.6rem
+  }
 }
