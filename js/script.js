@@ -71,15 +71,15 @@ function paintGrid() {
   //   $(this).css('background-color', color);
   // });
   //
-  // // Paint upon clicking and dragging
-  // $('.pixel').mousedown(function() {
-  //     $(this).css('background-color', color);
-  //     isClicked = true; // When mouse goes down, set isClicked to true
-  //   })
-  //   .mouseup(function() {
-  //     isClicked = false; // When mouse goes up, set isClicked to false
-  //   });
-
+  // Paint upon touching and dragging
+  $('.pixel').on('touchstart', function() {
+      $(this).css('background-color', color);
+      isClicked = true; // When mouse goes down, set isClicked to true
+    })
+    .on('touchcancel', function() {
+      isClicked = false; // When mouse goes up, set isClicked to false
+    });
+  // Dragging upon touch moving
   $('.pixel').on('touchmove', function() {
     if (isClicked) { // Only change css if mouse is down
       $(this).css('background-color', color);
