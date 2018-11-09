@@ -1,15 +1,19 @@
-let color;
-
 // Global boolean to be used for dragging painting
 let isClicked = false;
 
-let grid = $('.grid');
-let defaultColor = 'rgb(250, 255, 240)';
+const grid = $('.grid');
 
-// Functions to be called when DOM is ready
+//Used for erasing function
+const defaultColor = 'rgb(250, 255, 240)';
+
+// To be done when DOM is ready
 $(function() {
   $('#submit').click(makeGrid);
-  $(document).click(paintGrid);
+  $(document).click(function() {
+    paintGrid();
+    // Activating dblclick eventListener since first click on the grid
+    $('.pixel').on('dblclick', erasePixel);
+  });
   color = $('.color-picker').val();
 });
 
@@ -37,6 +41,7 @@ function makeGrid() {
 
 //Paint upon single clicking
 function paintGrid() {
+  let color = $('.color-picker').val();
   // Get new selected color
   $('.color-picker').change(function() {
     color = $('.color-picker').val();
@@ -44,12 +49,12 @@ function paintGrid() {
 
   // Paint upon single clicking
   $('.pixel').click(function() {
-    //color = $('.color-picker').val();
     $(this).css('background-color', color);
   });
 
   // Paint upon clicking and dragging
   $('.pixel').mousedown(function() {
+      //color = $('.color-picker').val();
       $(this).css('background-color', color);
       isClicked = true; // When mouse goes down, set isClicked to true
     })
@@ -63,31 +68,30 @@ function paintGrid() {
     }
   });
 
-  // Making it fully functional on touchscreen devices
-
-  // // Paint upon single clicking
-  // $('.pixel').click(function() {
-  //   //color = $('.color-picker').val();
-  //   $(this).css('background-color', color);
-  // });
+  //   // Making it fully functional on touchscreen devices
   //
-  // Paint upon touching and dragging
-  $('.pixel').on('touchstart', function() {
-      $(this).css('background-color', color);
-      isClicked = true; // When mouse goes down, set isClicked to true
-    })
-    .on('touchcancel', function() {
-      isClicked = false; // When mouse goes up, set isClicked to false
-    });
-  // Dragging upon touch moving
-  $('.pixel').on('touchmove', function() {
-    if (isClicked) { // Only change css if mouse is down
-      $(this).css('background-color', color);
-    }
-  });
+  //   // Paint upon single clicking
+  //   $('.pixel').on('vclick', function() {
+  //     $(this).css('background-color', color);
+  //   });
+  //
+  //   // Paint upon touching and dragging
+  //   $('.pixel').on('vmousedown', function() {
+  //       $(this).css('background-color', color);
+  //       isClicked = true; // When mouse goes down, set isClicked to true
+  //     })
+  //     .on('vmouseup', function() {
+  //       isClicked = false; // When mouse goes up, set isClicked to false
+  //     });
+  //   // Dragging upon touch moving (using jQuery Mobile)
+  //   $('.pixel').on('vmouseover', function() {
+  //     if (isClicked) { // Only change css if mouse is down
+  //       $(this).css('background-color', color);
+  //     }
+  //   });
 }
 
-// TO BE IMPLEMENTED
-//function eraseMode() {
-//
-//}
+// Restoring default color, so it acts like an eraser
+function erasePixel() {
+  $(this).css('background-color', defaultColor);
+}
