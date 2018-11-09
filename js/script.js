@@ -62,6 +62,29 @@ function paintGrid() {
       $(this).css('background-color', color);
     }
   });
+
+  // Making it fully functional on touchscreen devices
+
+  // // Paint upon single clicking
+  // $('.pixel').click(function() {
+  //   //color = $('.color-picker').val();
+  //   $(this).css('background-color', color);
+  // });
+  //
+  // // Paint upon clicking and dragging
+  // $('.pixel').mousedown(function() {
+  //     $(this).css('background-color', color);
+  //     isClicked = true; // When mouse goes down, set isClicked to true
+  //   })
+  //   .mouseup(function() {
+  //     isClicked = false; // When mouse goes up, set isClicked to false
+  //   });
+
+  $('.pixel').on('touchmove', function() {
+    if (isClicked) { // Only change css if mouse is down
+      $(this).css('background-color', color);
+    }
+  });
 }
 
 // TO BE IMPLEMENTED
