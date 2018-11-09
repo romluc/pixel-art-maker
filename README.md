@@ -1,6 +1,8 @@
 # Pixel Art Maker Project
 App built as part of Udacity's Web Fundamentals Nanodegree.
 
+Click [here](https://romluc.github.io/pixel-art-maker/) to start painting! 🎨  
+
 ## Table of Contents
 
 * [Instructions](#instructions)
